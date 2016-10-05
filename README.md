@@ -15,6 +15,5 @@ Each image has it's own directory
 * If you need to share the same Docker image between multiple services, consider adding it to this repository
 * Same rules apply in case you have some common parts between multiple images
 * Extracting common stuff into separate image will optimize build and deployment speed because we avoid repeating the same steps every time when we build image for the specific service
-* Currently you will have to push it manually to Docker Hub and to ECR every time you make any changes
-* We don't have optimize for image size, but it's good idea to keep the images slim
-* It's better to optimize for readability or maintainability, so for example you can use `ubuntu` over `alpine` as your base image
+* Try to keep the images slim
+* Avoid copying community Dockerfiles, build on top of them (use `FROM`)
