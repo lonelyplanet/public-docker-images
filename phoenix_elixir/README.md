@@ -10,10 +10,7 @@ application in a new directory "test".  Because docker run's as root normally
 you then need to make sure you change ownership back under your user.
 
 ``` bash
-aws-mfa
-eval $(aws-mfa)
-eval $(aws ecr get-login --region=us-east-1)
-docker run -v $PWD:/code -it 049718304780.dkr.ecr.us-east-1.amazonaws.com/lonelyplanet/phoenix-elixir:latest phoenix.new test
+docker run -v $PWD:/code -it lonelyplanet/phoenix-elixir:latest phoenix.new test
 sudo chown -R $USER:$USER ./test
 ```
 
