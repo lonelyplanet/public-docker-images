@@ -1,4 +1,5 @@
 FROM golang:1.7-alpine
+LABEL lp-service-id=gor
 ARG GOR_VERSION
 RUN apk add --no-cache ca-certificates curl
 RUN curl -O -L https://github.com/buger/gor/releases/download/v${GOR_VERSION}/gor_v${GOR_VERSION}_x64.tar.gz \
